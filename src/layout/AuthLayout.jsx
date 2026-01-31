@@ -1,0 +1,40 @@
+import { Outlet } from "react-router-dom";
+
+import loginImage from "@/assets/loginImage.jpg";
+
+const AUTH_BG_COLOR = "#F9FAFB";
+
+const AuthLayout = () => {
+  return (
+    <div
+      className="relative h-screen overflow-hidden flex flex-col lg:flex-row"
+      style={{ background: AUTH_BG_COLOR }}
+    >
+      {/* Left: full-height image — hidden on small screens, visible from lg up */}
+      <aside
+        className="hidden lg:block relative w-full lg:w-[55%] lg:h-screen shrink-0 overflow-hidden lg:rounded-r-none"
+        aria-hidden
+      >
+        <img
+          src={loginImage}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-black/40" aria-hidden />
+      </aside>
+
+      {/* Right: auth form card — full width on small, 45% on lg+ */}
+      <main
+        className="relative z-10 w-full lg:w-[45%] flex flex-col items-center justify-start lg:justify-center flex-1 min-h-0 overflow-y-auto overflow-x-hidden py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-12 xl:px-16"
+        role="main"
+      >
+        <div className="w-full max-w-[480px] sm:max-w-[520px] min-w-0 flex flex-col shrink-0 bg-white rounded-xl shadow-xl shadow-gray-200/60 border border-gray-100 p-6 sm:p-8 lg:p-10 my-auto lg:my-0">
+          <Outlet />
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default AuthLayout;

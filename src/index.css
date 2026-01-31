@@ -1,0 +1,237 @@
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* VARIANT SUPPORT */
+@custom-variant dark (&:is(.dark *));
+
+/* DESIGN TOKENS */
+@theme inline {
+  /* Radii */
+  --radius: 0.65rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.5rem;
+  --text-7xl: 4rem;
+  --text-8xl: 4.5rem;
+  --text-9xl: 5rem;
+
+  /* UI Colors (alias tokens) */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* LIGHT THEME — logo branding: red/orange emblem, dark text, white background */
+:root,
+.theme-default {
+  --background: #ffffff; /* white, matches logo background */
+  --foreground: #1a1a2e; /* dark navy/charcoal — logo text colour */
+
+  --card: #ffffff;
+  --card-foreground: #1a1a2e;
+
+  --popover: #ffffff;
+  --popover-foreground: #1a1a2e;
+
+  /* Brand — logo red (emblem) as primary */
+  --primary: #c41e3a; /* logo red */
+  --primary-foreground: #ffffff;
+
+  /* Logo orange as secondary / accent */
+  --secondary: #fff5f3; /* very light red tint */
+  --secondary-foreground: #1a1a2e;
+
+  --accent: #fff7ed; /* very light orange tint — hover */
+  --accent-foreground: #c2410c; /* deep orange */
+
+  --muted: #fafafa; /* neutral muted surfaces */
+  --muted-foreground: #64748b;
+
+  /* Status */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  /* Lines / focus — subtle warm grey */
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #c41e3a; /* focus ring matches logo red */
+
+  /* Charts — brand red, orange, then semantic */
+  --chart-1: #c41e3a;
+  --chart-2: #ea580c; /* logo orange */
+  --chart-3: #0f172a;
+  --chart-4: #64748b;
+  --chart-5: #dc2626;
+
+  /* Sidebar */
+  --sidebar: #fafafa;
+  --sidebar-foreground: #1a1a2e;
+  --sidebar-primary: #c41e3a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fff5f3;
+  --sidebar-accent-foreground: #1a1a2e;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #c41e3a;
+}
+
+/* DARK THEME — logo branding: dark background (logo text colour), red/orange accents */
+.dark,
+.theme-default.dark {
+  --background: #1a1a2e; /* dark navy — logo text colour as bg */
+  --foreground: #f8fafc;
+
+  --card: #252542;
+  --card-foreground: #f8fafc;
+
+  --popover: #252542;
+  --popover-foreground: #f8fafc;
+
+  /* Logo red — slightly brighter on dark */
+  --primary: #e11d48;
+  --primary-foreground: #ffffff;
+
+  /* Logo orange for secondary */
+  --secondary: #2d1f1a; /* dark warm tint */
+  --secondary-foreground: #fed7aa;
+
+  --accent: #3d2c29; /* soft red-tinted hover */
+  --accent-foreground: #fdba74;
+
+  --muted: #252542;
+  --muted-foreground: #94a3b8;
+
+  --destructive: #f87171;
+  --destructive-foreground: #1a1a2e;
+
+  --border: #334155;
+  --input: #334155;
+  --ring: #e11d48;
+
+  --chart-1: #e11d48;
+  --chart-2: #fb923c; /* logo orange */
+  --chart-3: #64748b;
+  --chart-4: #94a3b8;
+  --chart-5: #f87171;
+
+  --sidebar: #1a1a2e;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #e11d48;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2d1f1a;
+  --sidebar-accent-foreground: #fed7aa;
+  --sidebar-border: #334155;
+  --sidebar-ring: #e11d48;
+}
+
+/* BASE LAYER */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"] {
+    @apply cursor-pointer;
+  }
+}
+
+/* Utilities for Text Sizes */
+@layer utilities {
+  .text-xs {
+    font-size: var(--text-xs);
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+  }
+  .text-base {
+    font-size: var(--text-base);
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+  }
+  .text-6xl {
+    font-size: var(--text-6xl);
+  }
+  .text-7xl {
+    font-size: var(--text-7xl);
+  }
+  .text-8xl {
+    font-size: var(--text-8xl);
+  }
+  .text-9xl {
+    font-size: var(--text-9xl);
+  }
+}
+.writing-vertical-lr {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
