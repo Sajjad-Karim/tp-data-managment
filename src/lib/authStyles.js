@@ -25,7 +25,7 @@ export const AUTH_FOOTER_LINK_CLASS =
   "font-semibold text-primary hover:text-primary/90 hover:underline underline-offset-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-2 rounded";
 
 export const AUTH_PASSWORD_TOGGLE_BUTTON_CLASS =
-  "absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 p-1.5 rounded-md hover:bg-gray-100 transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-0";
+  "absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 p-2 min-w-[44px] min-h-[44px] rounded-md hover:bg-gray-100 transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-0 flex items-center justify-center";
 
 export const AUTH_OTP_INPUT_CLASS =
   "w-12 h-14 sm:w-14 sm:h-16 rounded-lg border-2 border-gray-200 bg-gray-50/50 text-center text-xl font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200";

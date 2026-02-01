@@ -176,6 +176,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
@@ -187,6 +190,29 @@
   input[type="reset"] {
     @apply cursor-pointer;
   }
+}
+
+/* Dashboard main content — modern thin scrollbar */
+.dashboard-main-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.dashboard-main-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.dashboard-main-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dashboard-main-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+.dashboard-main-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+.dashboard-main-scroll::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /* Utilities for Text Sizes */

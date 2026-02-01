@@ -7,8 +7,14 @@ const AUTH_BG_COLOR = "#F9FAFB";
 const AuthLayout = () => {
   return (
     <div
-      className="relative h-screen overflow-hidden flex flex-col lg:flex-row"
-      style={{ background: AUTH_BG_COLOR }}
+      className="relative min-h-screen h-screen overflow-hidden flex flex-col lg:flex-row"
+      style={{
+        background: AUTH_BG_COLOR,
+        paddingLeft: "env(safe-area-inset-left)",
+        paddingRight: "env(safe-area-inset-right)",
+        paddingTop: "env(safe-area-inset-top)",
+        paddingBottom: "env(safe-area-inset-bottom)",
+      }}
     >
       {/* Left: full-height image — hidden on small screens, visible from lg up */}
       <aside
@@ -26,10 +32,10 @@ const AuthLayout = () => {
 
       {/* Right: auth form card — full width on small, 45% on lg+ */}
       <main
-        className="relative z-10 w-full lg:w-[45%] flex flex-col items-center justify-start lg:justify-center flex-1 min-h-0 overflow-y-auto overflow-x-hidden py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-12 xl:px-16"
+        className="relative z-10 w-full lg:w-[45%] flex flex-col items-center justify-start lg:justify-center flex-1 min-h-0 overflow-y-auto overflow-x-hidden py-5 sm:py-8 lg:py-10 px-3 sm:px-6 lg:px-12 xl:px-16"
         role="main"
       >
-        <div className="w-full max-w-[480px] sm:max-w-[520px] min-w-0 flex flex-col shrink-0 bg-white rounded-xl shadow-xl shadow-gray-200/60 border border-gray-100 p-6 sm:p-8 lg:p-10 my-auto lg:my-0">
+        <div className="w-full max-w-[480px] sm:max-w-[520px] min-w-0 flex flex-col shrink-0 bg-white rounded-xl shadow-xl shadow-gray-200/60 border border-gray-100 p-4 sm:p-8 lg:p-10 my-auto lg:my-0">
           <Outlet />
         </div>
       </main>
