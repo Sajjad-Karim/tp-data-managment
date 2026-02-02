@@ -21,6 +21,25 @@ const AuthLayout = () => {
         className="hidden lg:block relative w-full lg:w-[55%] lg:h-screen shrink-0 overflow-hidden lg:rounded-r-none"
         aria-hidden
       >
+        {/* Top-left brand area (reserved space for logo) */}
+        <div
+          className="absolute top-0 left-0 z-10 p-3 lg:p-4"
+          aria-label="Brand"
+        >
+          <div className="inline-flex items-center gap-3 rounded-sm border border-white/35 bg-white/90 backdrop-blur-md px-2 py-1.5 ">
+            <span
+              className="h-2.5 w-2.5 rounded-full"
+              style={{
+                background: "linear-gradient(135deg, #c41e3a 0%, #ea580c 100%)",
+              }}
+              aria-hidden
+            />
+            <span className="text-sm font-bold tracking-tight text-gray-900">
+              Logo Here.......
+            </span>
+          </div>
+        </div>
+
         <img
           src={loginImage}
           alt=""
