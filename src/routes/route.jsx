@@ -16,6 +16,7 @@ import PADetail from "../pages/passenger-assistants/PADetail";
 import Documents from "../pages/documents";
 import Reports from "../pages/reports";
 import UserManagement from "../pages/users";
+import SystemConfigurations from "../pages/system-configurations";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import ForgotPassword from "../pages/auth/ForgotPassword";
@@ -37,6 +38,7 @@ export const router = createBrowserRouter([
       { path: "documents", element: <Documents /> },
       { path: "reports", element: <Reports /> },
       { path: "users", element: <UserManagement /> },
+      { path: "system-configurations", element: <SystemConfigurations /> },
     ],
   },
   {
